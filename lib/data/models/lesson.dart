@@ -15,4 +15,10 @@ class Lesson<T extends Task> {
     if (T == PickOneTask) return PickOneLessonScreen(lesson: this as Lesson<PickOneTask>);
     return UScaffold(body: LessonSuccessView(tasksCount: 1, title: view.title));
   }
+
+  void reset() {
+    for (var task in tasks) {
+      task.reset();
+    }
+  }
 }

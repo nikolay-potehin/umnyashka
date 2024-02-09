@@ -14,4 +14,7 @@ class PickOneTask extends Task {
 
   @override
   bool check() => picked == items[solution];
+
+  @override
+  void reset() => picked = null;
 }
