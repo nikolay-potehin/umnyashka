@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:umnyashka/data/models/lesson.dart';
-import 'package:umnyashka/data/models/tasks/pick_one.dart';
+import 'package:umnyashka/data/models/tasks/task.dart';
 import 'package:umnyashka/modules/lessons/pick_one/controller.dart';
 import 'package:umnyashka/widgets/scaffold.dart';
 

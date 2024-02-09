@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:umnyashka/core/constants/enums/voices.dart';
-import 'package:umnyashka/data/models/tasks/pick_one.dart';
+import 'package:umnyashka/data/models/tasks/task.dart';
 import 'package:umnyashka/data/services/sounds.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/success.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/tasks.dart';

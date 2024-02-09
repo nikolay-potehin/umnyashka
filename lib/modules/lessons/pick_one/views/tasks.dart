@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:umnyashka/core/constants/theme.dart';
-import 'package:umnyashka/data/models/tasks/pick_one.dart';
+import 'package:umnyashka/data/models/tasks/task.dart';
 import 'package:umnyashka/modules/lessons/pick_one/controller.dart';
 import 'package:umnyashka/widgets/button.dart';
 
@@ -70,7 +70,8 @@ class _ItemCard extends StatelessWidget {
             border: Border.all(),
           ),
           child: Center(
-            child: Text(item, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
+            child:
+                Text(item.name, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
           ),
         ),
       );

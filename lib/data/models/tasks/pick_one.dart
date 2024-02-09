@@ -1,7 +1,4 @@
-import 'package:umnyashka/core/constants/enums/voices.dart';
-import 'package:umnyashka/data/models/tasks/task.dart';
-
-typedef TaskItem = String;
+part of 'task.dart';
 
 class PickOneTask extends Task {
   PickOneTask(this.items, this.solution, {this.voice});
