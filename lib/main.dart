@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:umnyashka/data/services/lessons.dart';
 import 'package:umnyashka/modules/home/screen.dart';
 
 void main() {
@@ -11,6 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(LessonsService());
+
     return const GetMaterialApp(
       home: HomeScreen(),
     );

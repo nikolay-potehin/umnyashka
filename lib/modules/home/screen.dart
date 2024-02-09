@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:umnyashka/modules/home/controller.dart';
+import 'package:umnyashka/data/services/lessons.dart';
 import 'package:umnyashka/widgets/avatar.dart';
-import 'package:umnyashka/widgets/card.dart';
+import 'package:umnyashka/widgets/lesson_card.dart';
 import 'package:umnyashka/widgets/scaffold.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +10,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final c = Get.put(HomeController());
+    // final c = Get.put(HomeController());
+    final lessons = Get.find<LessonsService>().lessons;
 
     return UScaffold(
       body: Column(
@@ -26,9 +27,9 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-              itemCount: c.lessons.length,
+              itemCount: lessons.length,
               padding: const EdgeInsets.all(20),
-              itemBuilder: (_, idx) => UCard(data: c.lessons[idx]),
+              itemBuilder: (_, idx) => LessonCard(lesson: lessons[idx]),
               separatorBuilder: (_, __) => const SizedBox(height: 20),
             ),
           ),

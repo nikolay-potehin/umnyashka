@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:umnyashka/data/models/ucard.dart';
+import 'package:get/get.dart';
+import 'package:umnyashka/data/models/lesson.dart';
 import 'package:umnyashka/widgets/play_button.dart';
 
-class UCard extends StatelessWidget {
-  const UCard({
+class LessonCard extends StatelessWidget {
+  const LessonCard({
     super.key,
-    required this.data,
+    required this.lesson,
   });
 
-  final UCardData data;
+  final Lesson lesson;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: data.color,
+        color: lesson.view.color,
         borderRadius: const BorderRadius.all(Radius.circular(20)),
         boxShadow: const [
           BoxShadow(blurRadius: 8, color: Colors.grey, offset: Offset(4, 4)),
@@ -27,12 +28,14 @@ class UCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(data.title, style: const TextStyle(fontSize: 24)),
-                Text(data.description, style: const TextStyle(fontSize: 16)),
+                Text(lesson.view.title, style: const TextStyle(fontSize: 24)),
+                Text(lesson.view.description, style: const TextStyle(fontSize: 16)),
               ],
             ),
           ),
-          const PlayButton(),
+          PlayButton(
+            onTap: () => Get.to(() => lesson.screen),
+          ),
         ],
       ),
     );

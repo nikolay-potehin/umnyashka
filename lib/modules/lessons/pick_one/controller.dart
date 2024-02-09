@@ -5,14 +5,11 @@ import 'package:umnyashka/modules/lessons/pick_one/views/success.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/tasks.dart';
 
 class PickOneController extends GetxController {
-  final tasks = [
-    PickOneTask(['Легкий', 'Средний', 'Тяжелый', 'Легчайший'], 2),
-    PickOneTask(['Легчайший', 'Тяжелый', 'Средний', 'Легкий'], 1),
-    PickOneTask(['Легкий', 'Средний', 'Легчайший', 'Тяжелый'], 3),
-    PickOneTask(['Тяжелый', 'Легчайший', 'Средний', 'Легкий'], 0),
-  ];
+  PickOneController({required this.tasks});
+  final List<PickOneTask> tasks;
 
   int _curr = 0;
+
   int get currentIndex => _curr;
   List<TaskItem> get currentItems => tasks[_curr].items;
   TaskItem? get picked => tasks[_curr].picked;

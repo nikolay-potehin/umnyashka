@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:umnyashka/modules/lessons/pick_one/screen.dart';
 
 class PlayButton extends StatelessWidget {
-  const PlayButton({super.key});
+  const PlayButton({super.key, required this.onTap});
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => const PickOneLessonScreen()),
+      // onTap: () => Get.to(() => const PickOneLessonScreen()),
+      onTap: onTap,
       child: Container(
         width: 60,
         height: 60,
