@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:get/get.dart';
+import 'package:umnyashka/modules/lessons/pick_one/controller.dart';
 import 'package:umnyashka/widgets/scaffold.dart';
 
 class PickOneLessonScreen extends StatelessWidget {
@@ -7,22 +8,10 @@ class PickOneLessonScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(PickOneController());
+
     return UScaffold(
-      body: Column(
-        children: [
-          const Text('Реши задачу', style: TextStyle(fontSize: 28)),
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: StepProgressIndicator(totalSteps: 4),
-          ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-            ),
-          ),
-          Container(height: 10, color: Colors.white)
-        ],
-      ),
+      body: GetBuilder<PickOneController>(builder: (c) => c.view),
     );
   }
 }
