@@ -14,7 +14,7 @@ class LessonTasksView extends StatelessWidget {
     return GetBuilder<PickOneController>(builder: (c) {
       return Column(
         children: [
-          const Text('Реши задачу', style: TextStyle(fontSize: 28)),
+          Text(c.title, style: const TextStyle(fontSize: 28)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: StepProgressIndicator(

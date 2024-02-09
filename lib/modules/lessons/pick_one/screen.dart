@@ -12,7 +12,7 @@ class PickOneLessonScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(PickOneController(tasks: lesson.tasks));
+    Get.put(PickOneController(title: lesson.view.title, tasks: lesson.tasks));
 
     return UScaffold(
       body: GetBuilder<PickOneController>(builder: (c) => c.view),

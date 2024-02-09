@@ -5,15 +5,16 @@ import 'package:umnyashka/core/constants/theme.dart';
 import 'package:umnyashka/widgets/button.dart';
 
 class LessonSuccessView extends StatelessWidget {
-  const LessonSuccessView({super.key, required this.tasksCount});
+  const LessonSuccessView({super.key, required this.tasksCount, required this.title});
 
   final int tasksCount;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Реши задачу', style: TextStyle(fontSize: 28)),
+        Text(title, style: const TextStyle(fontSize: 28)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: StepProgressIndicator(

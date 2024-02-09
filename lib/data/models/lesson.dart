@@ -13,6 +13,6 @@ class Lesson<T extends Task> {
 
   Widget get screen {
     if (T == PickOneTask) return PickOneLessonScreen(lesson: this as Lesson<PickOneTask>);
-    return const UScaffold(body: LessonSuccessView(tasksCount: 1));
+    return UScaffold(body: LessonSuccessView(tasksCount: 1, title: view.title));
   }
 }

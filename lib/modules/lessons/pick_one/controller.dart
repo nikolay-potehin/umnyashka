@@ -5,8 +5,9 @@ import 'package:umnyashka/modules/lessons/pick_one/views/success.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/tasks.dart';
 
 class PickOneController extends GetxController {
-  PickOneController({required this.tasks});
+  PickOneController({required this.title, required this.tasks});
   final List<PickOneTask> tasks;
+  final String title;
 
   int _curr = 0;
 
@@ -15,7 +16,9 @@ class PickOneController extends GetxController {
   TaskItem? get picked => tasks[_curr].picked;
 
   Widget get view {
-    if (_curr >= tasks.length) return LessonSuccessView(tasksCount: tasks.length);
+    if (_curr >= tasks.length) {
+      return LessonSuccessView(tasksCount: tasks.length, title: title);
+    }
     return const LessonTasksView();
   }
 
