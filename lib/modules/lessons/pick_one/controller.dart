@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:umnyashka/data/models/tasks/pick_one.dart';
+import 'package:umnyashka/data/services/sounds.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/success.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/tasks.dart';
 
@@ -8,6 +9,7 @@ class PickOneController extends GetxController {
   PickOneController({required this.title, required this.tasks});
   final List<PickOneTask> tasks;
   final String title;
+  final player = Get.find<SoundsService>();
 
   int _curr = 0;
 
@@ -33,8 +35,16 @@ class PickOneController extends GetxController {
     }
   }
 
-  void _next() {
+  void _next() async {
     _curr += 1;
+    if (_curr >= tasks.length) {
+      await player.playLessonCompleted();
+      for (var task in tasks) {
+        task.reset();
+      }
+    } else {
+      await player.playStepProgress();
+    }
     update();
   }
 }
