@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 Spacer(),
-                UAvatar(radius: 30),
+                UAvatar(radius: 30, child: Icon(Icons.person, size: 30)),
               ],
             ),
           ),
