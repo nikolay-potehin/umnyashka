@@ -70,7 +70,7 @@ class _ItemCard extends StatelessWidget {
             border: Border.all(),
           ),
           child: Center(
-            child: Text(item, style: const TextStyle(fontSize: 20)),
+            child: Text(item, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
           ),
         ),
       );
