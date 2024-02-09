@@ -66,12 +66,31 @@ class _ItemCard extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            color: checked ? UTheme.success.withAlpha(125) : Colors.transparent,
-            border: Border.all(),
+            color: Colors.transparent,
+            border: checked ? Border.all(color: UTheme.success, width: 10) : Border.all(),
           ),
           child: Center(
-            child:
-                Text(item.name, style: const TextStyle(fontSize: 20), textAlign: TextAlign.center),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Stack(
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: item.image,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      item.name,
+                      style: const TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       );

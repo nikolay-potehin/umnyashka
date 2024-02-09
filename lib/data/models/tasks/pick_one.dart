@@ -1,7 +1,8 @@
 part of 'task.dart';
 
 class PickOneTask extends Task {
-  PickOneTask(this.items, this.solution, {this.voice});
+  PickOneTask(this.items, this.solution, {this.voice})
+      : assert(solution >= 0 && solution < items.length);
 
   final List<TaskItem> items;
   final Voices? voice;

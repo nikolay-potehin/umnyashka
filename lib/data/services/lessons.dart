@@ -6,36 +6,20 @@ import 'package:umnyashka/data/models/tasks/task.dart';
 import 'package:umnyashka/data/models/ucard_data.dart';
 
 class LessonsService extends GetxService {
-  final lessons = _testLessons;
+  List<Lesson> get lessons => _testLessons;
 }
 
 final _testLessons = [
   Lesson(
     tasks: [
-      PickOneTask([
-        TaskItem(name: 'Легкий', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Тяжелый', image: const SizedBox()),
-        TaskItem(name: 'Легчайший', image: const SizedBox()),
-      ], 2, voice: Voices.pick_heaviest),
-      PickOneTask([
-        TaskItem(name: 'Легчайший', image: const SizedBox()),
-        TaskItem(name: 'Тяжелый', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Легкий', image: const SizedBox()),
-      ], 0, voice: Voices.pick_lightest),
-      PickOneTask([
-        TaskItem(name: 'Легкий', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Легчайший', image: const SizedBox()),
-        TaskItem(name: 'Тяжелый', image: const SizedBox()),
-      ], 3, voice: Voices.pick_heaviest),
-      PickOneTask([
-        TaskItem(name: 'Тяжелый', image: const SizedBox()),
-        TaskItem(name: 'Легчайший', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Легкий', image: const SizedBox()),
-      ], 1, voice: Voices.pick_lightest),
+      PickOneTask([TaskItem.motorbike(), TaskItem.key(), TaskItem.leaf(), TaskItem.bag()], 0,
+          voice: Voices.pick_heaviest),
+      PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 1,
+          voice: Voices.pick_lightest),
+      PickOneTask([TaskItem.key(), TaskItem.bag(), TaskItem.motorbike(), TaskItem.leaf()], 2,
+          voice: Voices.pick_heaviest),
+      PickOneTask([TaskItem.leaf(), TaskItem.motorbike(), TaskItem.bag(), TaskItem.key()], 0,
+          voice: Voices.pick_lightest),
     ],
     view: UCardData(
       title: 'Легкий - Тяжелый',
@@ -45,24 +29,12 @@ final _testLessons = [
   ),
   Lesson(
     tasks: [
-      PickOneTask([
-        TaskItem(name: 'Маленький', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Большой', image: const SizedBox()),
-        TaskItem(name: 'Огромный', image: const SizedBox()),
-      ], 0, voice: Voices.pick_smallest),
-      PickOneTask([
-        TaskItem(name: 'Огромный', image: const SizedBox()),
-        TaskItem(name: 'Большой', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Маленький', image: const SizedBox()),
-      ], 0, voice: Voices.pick_biggest),
-      PickOneTask([
-        TaskItem(name: 'Огромный', image: const SizedBox()),
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Маленький', image: const SizedBox()),
-        TaskItem(name: 'Большой', image: const SizedBox()),
-      ], 2, voice: Voices.pick_smallest),
+      PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 3,
+          voice: Voices.pick_biggest),
+      PickOneTask([TaskItem.key(), TaskItem.motorbike(), TaskItem.bag(), TaskItem.leaf()], 0,
+          voice: Voices.pick_smallest),
+      PickOneTask([TaskItem.leaf(), TaskItem.bag(), TaskItem.motorbike(), TaskItem.key()], 2,
+          voice: Voices.pick_biggest),
     ],
     view: UCardData(
       title: 'Маленький - Большой',
@@ -72,18 +44,10 @@ final _testLessons = [
   ),
   Lesson(
     tasks: [
-      PickOneTask([
-        TaskItem(name: 'Узкий', image: const SizedBox()),
-        TaskItem(name: 'Самый узкий', image: const SizedBox()),
-        TaskItem(name: 'Широкий', image: const SizedBox()),
-        TaskItem(name: 'Широченный', image: const SizedBox()),
-      ], 1, voice: Voices.pick_narrowest),
-      PickOneTask([
-        TaskItem(name: 'Средний', image: const SizedBox()),
-        TaskItem(name: 'Широкий', image: const SizedBox()),
-        TaskItem(name: 'Узкий', image: const SizedBox()),
-        TaskItem(name: 'Очень узкий', image: const SizedBox()),
-      ], 1, voice: Voices.pick_widest),
+      PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 2,
+          voice: Voices.pick_narrowest),
+      PickOneTask([TaskItem.motorbike(), TaskItem.bag(), TaskItem.leaf(), TaskItem.key()], 0,
+          voice: Voices.pick_widest),
     ],
     view: UCardData(
       title: 'Узкий - Широкий',
