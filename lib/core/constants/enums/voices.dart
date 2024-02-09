@@ -11,10 +11,11 @@ enum Voices {
   pick_narrowest,
   pick_widest,
   very_good,
+  try_again,
 }
 
 extension Voiceover on Voices {
-  String get assetName => 'assets/sounds/$name.mp3';
+  String get assetName => 'assets/voices/$name.mp3';
 
   void sound() => Get.find<SoundsService>().playVoice(this);
 }

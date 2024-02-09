@@ -22,7 +22,7 @@ class UButton extends StatelessWidget {
       child: Container(
         width: width ?? double.infinity,
         margin: margin,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         decoration: UDecorations.outline,
         child: Center(child: child),
       ),

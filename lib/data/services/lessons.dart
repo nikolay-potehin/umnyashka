@@ -10,9 +10,9 @@ class LessonsService extends GetxService {
     Lesson(
       tasks: [
         PickOneTask(['Легкий', 'Средний', 'Тяжелый', 'Легчайший'], 2, voice: Voices.pick_heaviest),
-        PickOneTask(['Легчайший', 'Тяжелый', 'Средний', 'Легкий'], 1, voice: Voices.pick_heaviest),
+        PickOneTask(['Легчайший', 'Тяжелый', 'Средний', 'Легкий'], 0, voice: Voices.pick_lightest),
         PickOneTask(['Легкий', 'Средний', 'Легчайший', 'Тяжелый'], 3, voice: Voices.pick_heaviest),
-        PickOneTask(['Тяжелый', 'Легчайший', 'Средний', 'Легкий'], 0, voice: Voices.pick_heaviest),
+        PickOneTask(['Тяжелый', 'Легчайший', 'Средний', 'Легкий'], 1, voice: Voices.pick_lightest),
       ],
       view: UCardData(
         title: 'Легкий - Тяжелый',
@@ -22,9 +22,11 @@ class LessonsService extends GetxService {
     ),
     Lesson(
       tasks: [
-        PickOneTask(['Маленький', 'Средний', 'Большой', 'Огромный'], 0),
-        PickOneTask(['Огромный', 'Большой', 'Средний', 'Маленький'], 3),
-        PickOneTask(['Огромный', 'Средний', 'Маленькмй', 'Большой'], 2),
+        PickOneTask(['Маленький', 'Средний', 'Большой', 'Огромный'], 0,
+            voice: Voices.pick_smallest),
+        PickOneTask(['Огромный', 'Большой', 'Средний', 'Маленький'], 0, voice: Voices.pick_biggest),
+        PickOneTask(['Огромный', 'Средний', 'Маленькмй', 'Большой'], 2,
+            voice: Voices.pick_smallest),
       ],
       view: UCardData(
         title: 'Маленький - Большой',
@@ -34,8 +36,10 @@ class LessonsService extends GetxService {
     ),
     Lesson(
       tasks: [
-        PickOneTask(['Узкий', 'Самый узкий', 'Широкий', 'Широченный'], 1),
-        PickOneTask(['Средний', 'Широкий', 'Просто Узкий', 'Очень узкий'], 3),
+        PickOneTask(['Узкий', 'Самый узкий', 'Широкий', 'Широченный'], 1,
+            voice: Voices.pick_narrowest),
+        PickOneTask(['Средний', 'Широкий', 'Просто Узкий', 'Очень узкий'], 1,
+            voice: Voices.pick_widest),
       ],
       view: UCardData(
         title: 'Узкий - Широкий',

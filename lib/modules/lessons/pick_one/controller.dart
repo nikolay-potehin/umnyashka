@@ -31,6 +31,14 @@ class PickOneController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void onClose() {
+    for (var task in tasks) {
+      task.reset();
+    }
+    super.onClose();
+  }
+
   void pick(TaskItem item) {
     tasks[_curr].pick(item);
     update();
@@ -39,6 +47,8 @@ class PickOneController extends GetxController {
   void check() {
     if (tasks[_curr].check()) {
       _next();
+    } else {
+      player.playVoice(Voices.try_again);
     }
   }
 
@@ -47,10 +57,6 @@ class PickOneController extends GetxController {
     if (_curr >= tasks.length) {
       player.playLessonCompleted();
       player.playVoice(Voices.very_good);
-
-      for (var task in tasks) {
-        task.reset();
-      }
     } else {
       tasks[_curr].voice?.sound();
       player.playStepProgress();
