@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:umnyashka/core/constants/enums/voices.dart';
 import 'package:umnyashka/data/models/tasks/pick_one.dart';
 import 'package:umnyashka/data/services/sounds.dart';
 import 'package:umnyashka/modules/lessons/pick_one/views/success.dart';
@@ -24,6 +25,12 @@ class PickOneController extends GetxController {
     return const LessonTasksView();
   }
 
+  @override
+  void onInit() {
+    tasks.first.voice?.sound();
+    super.onInit();
+  }
+
   void pick(TaskItem item) {
     tasks[_curr].pick(item);
     update();
@@ -38,12 +45,15 @@ class PickOneController extends GetxController {
   void _next() async {
     _curr += 1;
     if (_curr >= tasks.length) {
-      await player.playLessonCompleted();
+      player.playLessonCompleted();
+      player.playVoice(Voices.very_good);
+
       for (var task in tasks) {
         task.reset();
       }
     } else {
-      await player.playStepProgress();
+      tasks[_curr].voice?.sound();
+      player.playStepProgress();
     }
     update();
   }

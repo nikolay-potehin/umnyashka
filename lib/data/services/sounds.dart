@@ -8,12 +8,12 @@ class SoundsService extends GetxService {
 
   Future<void> playLessonCompleted() async {
     await _soundsPlayer.setAsset('assets/sounds/award.mp3');
-    return _soundsPlayer.play();
+    _soundsPlayer.play();
   }
 
   Future<void> playStepProgress() async {
     await _soundsPlayer.setAsset('assets/sounds/success.mp3');
-    return _soundsPlayer.play();
+    _soundsPlayer.play();
   }
 
   Future<void> playVoice(Voices voice) async {

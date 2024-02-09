@@ -1,5 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:get/get.dart';
+import 'package:umnyashka/data/services/sounds.dart';
+
 enum Voices {
   pick_lightest,
   pick_heaviest,
@@ -10,6 +13,8 @@ enum Voices {
   very_good,
 }
 
-extension VoicesAssets on Voices {
-  String get assetName => 'assets/sounds/$name';
+extension Voiceover on Voices {
+  String get assetName => 'assets/sounds/$name.mp3';
+
+  void sound() => Get.find<SoundsService>().playVoice(this);
 }
