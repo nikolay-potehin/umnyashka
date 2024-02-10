@@ -9,7 +9,7 @@ class LessonCard extends StatelessWidget {
     required this.lesson,
   });
 
-  final Lesson lesson;
+  final PickOneLesson lesson;
 
   @override
   Widget build(BuildContext context) {

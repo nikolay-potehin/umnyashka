@@ -6,11 +6,11 @@ import 'package:umnyashka/data/models/tasks/task.dart';
 import 'package:umnyashka/data/models/ucard_data.dart';
 
 class LessonsService extends GetxService {
-  List<Lesson> get lessons => _testLessons;
+  List<PickOneLesson> get lessons => _testLessons;
 }
 
 final _testLessons = [
-  Lesson(
+  PickOneLesson(
     tasks: [
       PickOneTask([TaskItem.motorbike(), TaskItem.key(), TaskItem.leaf(), TaskItem.bag()], 0,
           voice: Voices.pick_heaviest),
@@ -27,7 +27,7 @@ final _testLessons = [
       color: const Color.fromRGBO(80, 200, 120, 1),
     ),
   ),
-  Lesson(
+  PickOneLesson(
     tasks: [
       PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 3,
           voice: Voices.pick_biggest),
@@ -42,7 +42,7 @@ final _testLessons = [
       color: const Color.fromRGBO(235, 76, 66, 1),
     ),
   ),
-  Lesson(
+  PickOneLesson(
     tasks: [
       PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.sofa()], 2,
           voice: Voices.pick_narrowest),
