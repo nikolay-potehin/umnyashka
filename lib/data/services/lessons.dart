@@ -16,9 +16,9 @@ final _testLessons = [
           voice: Voices.pick_heaviest),
       PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 1,
           voice: Voices.pick_lightest),
-      PickOneTask([TaskItem.key(), TaskItem.bag(), TaskItem.motorbike(), TaskItem.leaf()], 2,
+      PickOneTask([TaskItem.key(), TaskItem.bag(), TaskItem.sofa(), TaskItem.leaf()], 2,
           voice: Voices.pick_heaviest),
-      PickOneTask([TaskItem.leaf(), TaskItem.motorbike(), TaskItem.bag(), TaskItem.key()], 0,
+      PickOneTask([TaskItem.leaf(), TaskItem.sofa(), TaskItem.bag(), TaskItem.key()], 0,
           voice: Voices.pick_lightest),
     ],
     view: UCardData(
@@ -31,9 +31,9 @@ final _testLessons = [
     tasks: [
       PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 3,
           voice: Voices.pick_biggest),
-      PickOneTask([TaskItem.key(), TaskItem.motorbike(), TaskItem.bag(), TaskItem.leaf()], 0,
+      PickOneTask([TaskItem.key(), TaskItem.motorbike(), TaskItem.sofa(), TaskItem.leaf()], 0,
           voice: Voices.pick_smallest),
-      PickOneTask([TaskItem.leaf(), TaskItem.bag(), TaskItem.motorbike(), TaskItem.key()], 2,
+      PickOneTask([TaskItem.leaf(), TaskItem.bag(), TaskItem.sofa(), TaskItem.key()], 2,
           voice: Voices.pick_biggest),
     ],
     view: UCardData(
@@ -44,9 +44,9 @@ final _testLessons = [
   ),
   Lesson(
     tasks: [
-      PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.motorbike()], 2,
+      PickOneTask([TaskItem.bag(), TaskItem.leaf(), TaskItem.key(), TaskItem.sofa()], 2,
           voice: Voices.pick_narrowest),
-      PickOneTask([TaskItem.motorbike(), TaskItem.bag(), TaskItem.leaf(), TaskItem.key()], 0,
+      PickOneTask([TaskItem.sofa(), TaskItem.bag(), TaskItem.leaf(), TaskItem.key()], 0,
           voice: Voices.pick_widest),
     ],
     view: UCardData(
